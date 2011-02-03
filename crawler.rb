@@ -15,5 +15,11 @@ def print_groups_of_thoughtworkers
 	end
 end
 
-#~ print_ex_thoughtworkers
-print_groups_of_thoughtworkers
+def print_members_of_groups
+	creepy = Creepy.new
+	creepy.instance_eval do
+		(login_to_linkedin && get_group_members && print) || (puts "Something went wrong")
+	end
+end
+
+print_members_of_groups

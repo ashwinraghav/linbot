@@ -19,6 +19,17 @@ class Mechanize
 			groups
 		end
 		
+		def members
+			members = []
+			content_tags =  member_tags.search(".content")
+			content_tags.each_with_index do |member, i|
+				members << {:profile => member.children[3].children[0].text,
+							:name => member.children[1].children[1].children[0].text
+				}
+			end
+			members
+		end
+		
 		private
 		def profile_tags
 			search("a[title = 'View Profile']")
@@ -26,6 +37,10 @@ class Mechanize
 		
 		def group_tags
 			search(".affiliation")
+		end
+		
+		def member_tags
+			search(".member-list").first.search(".member")
 		end
 		
 	end

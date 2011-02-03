@@ -26,6 +26,11 @@ class Linkedin
 		@agent.get(url)
 	end
 	
+	def next_members_link_of group, page_num
+		group["/groups?"] = "/groups?viewMembers="
+		"#{group}&split_page=#{page_num}"
+	end
+	
 	private
 	def curl_and_store_sessions
 		`curl --cookie-jar #{COOKIE_FILE} -so/dev/null -Fsession_login= -Fsession_rikey= -Fsession_key=#{USERNAME} -Fsession_password=#{PASSWORD} https://www.linkedin.com/secure/login?trk=hb_signin`
