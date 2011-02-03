@@ -15,6 +15,7 @@ class Linkedin
 	def login
 		curl_and_store_sessions
 		@agent.cookie_jar.load(COOKIE_FILE, :cookiestxt)
+		self
 	end
 	
 	def search_page criteria
