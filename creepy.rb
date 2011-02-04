@@ -4,28 +4,19 @@ require 'utils'
 
 class Creepy
 	def initialize
-		@profiles = @names = @profile_urls = @groups = @members = []
+		@groups = @members = []
 	end
 	
 	def login_to_linkedin
 		@linkedin = Linkedin.new.login
 	end
 	
-	def search_for_courageous_executives
-		(1...2).each do |search_page_number|
-			search_results_page = @linkedin.search_page(:company => :ThoughtWorks, :page_num => search_page_number)
-			break if (profiles = search_results_page.profiles).empty?
-			@profiles += profiles
-		end
-	end
-	
-	def get_groups_of_courageous_executives
-		@profiles.each do |profile|
-			@groups += groups_of(profile[:link]) 
-		end
+	def get_groups_of_courageous_executive profile_url
+		@groups += groups_of profile_url
 	end
 
 	def print
+		response = ""
 		@members.each do |member|
 			puts member[:name]
 			puts member[:profile]
@@ -34,17 +25,10 @@ class Creepy
 		end
 		
 		@groups.each do |group|
-			puts group[:name]
-			puts Linkedin::BASE_URL + group[:link]
-			puts "~"*10
-			return true if group == @groups.last
+			response += "#{group[:name]} | #{Linkedin::BASE_URL + group[:link]} \n\r"
 		end
-
-		@profiles.each do |profile|
-			puts profile[:name].inspect
-			puts Linkedin::BASE_URL + profile[:link]
-			puts "~"*10
-		end
+		
+		response
 	end
 	
 	def get_group_members
@@ -54,7 +38,7 @@ class Creepy
 	
 	private
 	def groups_of profile
-		home_page = @linkedin.get(Linkedin::BASE_URL + profile)
+		home_page = @linkedin.get profile
 		home_page.groups
 	end
 	
