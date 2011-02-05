@@ -27,8 +27,9 @@ class Linkedin
 	end
 	
 	def next_members_link_of group, page_num
-		group["/groups?"] = "/groups?viewMembers="
-		"#{group}&split_page=#{page_num}"
+		sub = group.clone 
+		sub["/groups?"] = "/groups?viewMembers="
+		"#{sub}&split_page=#{page_num}"
 	end
 	
 	private
