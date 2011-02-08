@@ -5,8 +5,8 @@ class Linkedin
 	SEARCH_URL = "#{BASE_URL}/search/fpsearch"
 	COOKIE_FILE = "cookies.txt"
 		
-	USERNAME = "surabhi171086@gmail.com" 
-	PASSWORD = "agentsmith"
+	USERNAME = "csouza@thoughtworks.com" 
+	PASSWORD = "clyde007"
 
 	def initialize 
 		@agent = Mechanize.new

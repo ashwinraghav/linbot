@@ -26,11 +26,10 @@ class Creepy
 			#~ response += "#{group[:name]} | #{Linkedin::BASE_URL + group[:link]} \n\r"
 		#~ end
 		
-		response
+		#~ response
 	end
 	
-	def find_group_members
-		group = "/groups?mostPopular=&gid=81780&trk=myg_ugrp_ovr"
+	def find_group_members group
 		profiles_of group
 		@members
 	end
@@ -42,8 +41,8 @@ class Creepy
 	end
 	
 	def profiles_of group
-		(1..10).each do |page_num|
-			members_page = @linkedin.get(Linkedin::BASE_URL + @linkedin.next_members_link_of(group, page_num))
+		(1..50).each do |page_num|
+			members_page = @linkedin.get(@linkedin.next_members_link_of(group, page_num))
 			@members += members_page.members
 			group += "&sik=" + Addressable::URI.parse(members_page.uri.to_s).query_values["sik"] if page_num == 1
 		end
