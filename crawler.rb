@@ -68,7 +68,7 @@ command :regex => /.*/, :syntax => "", :description => "default handler"
 	end
 end
 
-bot = Marvin::Android.new("1ashwinraghav@gmail.com", "raghavendrasai")
+bot = Marvin::Android.new("linkrawl@gmail.com", "thoughtworks")
 bot.listen
 
 #~ def from

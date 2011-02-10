@@ -38,6 +38,10 @@ Ensure that you I am a mamber of the group you want me to crawl. Only members of
 
 3)username: Will tell you the username that you need to use to become  a member to the group. Contact csouza@thoughtworks.com for the password.
 
+Got other queries? Contact:-
+vinkeshb@thoughtworks.com
+armohan@thoughtworks.com
+
 Thanks
 Linbot
 
