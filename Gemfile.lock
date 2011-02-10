@@ -1,0 +1,49 @@
+GIT
+  remote: git://github.com/vinkesh/marvin.git
+  revision: 30dab742d869a6802c3e71633afd9a264166ae04
+  specs:
+    marvin (0.0.1)
+      eventmachine
+      xmpp4r
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    actionmailer (2.3.4)
+      actionpack (= 2.3.4)
+    actionpack (2.3.4)
+      activesupport (= 2.3.4)
+      rack (~> 1.0.0)
+    activerecord (2.3.4)
+      activesupport (= 2.3.4)
+    activeresource (2.3.4)
+      activesupport (= 2.3.4)
+    activesupport (2.3.4)
+    daemons (1.1.0)
+    eventmachine (0.12.10)
+    mechanize (1.0.0)
+      nokogiri (>= 1.2.1)
+    nokogiri (1.4.4)
+    rack (1.0.1)
+    rails (2.3.4)
+      actionmailer (= 2.3.4)
+      actionpack (= 2.3.4)
+      activerecord (= 2.3.4)
+      activeresource (= 2.3.4)
+      activesupport (= 2.3.4)
+      rake (>= 0.8.3)
+    rake (0.8.7)
+    ruby-ole (1.2.11.1)
+    spreadsheet (0.6.5.1)
+      ruby-ole (>= 1.0)
+    xmpp4r (0.5)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  daemons
+  marvin!
+  mechanize
+  rails (= 2.3.4)
+  spreadsheet (~> 0.6.5.1)

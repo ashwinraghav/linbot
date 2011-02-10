@@ -61,7 +61,7 @@ end
 
 class Default
 include Marvin::Handler
-command :regex => /.*/, :syntax => "keyword", :description => "default handler"
+command :regex => /.*/, :syntax => "", :description => "default handler"
 
 	def handle(from, body, bot)
 		bot.reply(from, "type 'help me out' if you need help")

@@ -1,4 +1,5 @@
 require 'spreadsheet'
+
 class SpreadsheetService
 	FILE_NAME = "user_profiles.xls"
 	

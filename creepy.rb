@@ -2,6 +2,7 @@ require 'mechanize'
 require 'linkedin'
 require 'utils'
 require 'addressable/uri'
+
 class Creepy
 	def initialize
 		@groups = @members = []
@@ -41,7 +42,7 @@ class Creepy
 	end
 	
 	def profiles_of group
-		(1..50).each do |page_num|
+		(1..10).each do |page_num|
 			members_page = @linkedin.get(@linkedin.next_members_link_of(group, page_num))
 			@members += members_page.members
 			group += "&sik=" + Addressable::URI.parse(members_page.uri.to_s).query_values["sik"] if page_num == 1
