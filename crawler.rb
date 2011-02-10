@@ -52,8 +52,6 @@ end
 class Username
 include Marvin::Handler
 command :regex => /username.*/, :syntax => "username", :description => "Return the username that the crawler uses"
-
-	private 
 	def handle(from, body, bot)
 		bot.reply(from, "I crawl linked in as #{Linkedin::USERNAME}")
 	end
