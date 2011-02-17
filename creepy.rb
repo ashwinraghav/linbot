@@ -1,6 +1,7 @@
 require 'rubygems'
 require 'linkedin'
 require 'utils'
+require 'cgi'
 
 class Creepy
   def initialize
@@ -44,7 +45,7 @@ class Creepy
     (1..10).each do |page_num|
       members_page = @linkedin.get(@linkedin.next_members_link_of(group, page_num))
       @members += members_page.members
-      group += "&sik=" + Addressable::URI.parse(members_page.uri.to_s).query_values["sik"] if page_num == 1
+      group += "&sik=" + CGI::parse(members_page.uri.to_s)["sik"].first if page_num == 1
     end
   end
 
