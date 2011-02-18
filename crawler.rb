@@ -38,7 +38,7 @@ class Help
 
   def handle(from, body, bot)
     send_mail from
-    bot.reply(from, "I have sent you a mail that will help you understand how we can interact. \n It could be in your spam folder.")
+    bot.reply(from, "I have sent you a mail that wi	ll help you understand how we can interact. \n It could be in your spam folder.")
   end
 
   private
@@ -52,7 +52,6 @@ class Username
   include Marvin::Handler
   command :regex => /username.*/, :syntax => "username", :description => "Return the username that the crawler uses"
 
-  private
   def handle(from, body, bot)
     bot.reply(from, "I crawl linked in as #{Linkedin::USERNAME}")
   end
