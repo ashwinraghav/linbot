@@ -44,10 +44,10 @@ class Creepy
   def profiles_of group
     group_page = @linkedin.get(group)
     members_page = @linkedin.click(group_page.link_with(:text => "Members"))
-    [1..100].each do |page_num|
-      @members += page.members
-      break unless page.link_with(:text => /next/)
-      members_page = @linkedin.click(page.link_with(:text => /next/))
+    while true do
+      @members += members_page.members
+      break unless members_page.link_with(:text => /next/)
+      members_page = @linkedin.click(members_page.link_with(:text => /next/))
     end
   end
 
