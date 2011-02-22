@@ -66,20 +66,20 @@ class Default
   end
 end
 
-# def from
-# "armohan@thoughtworks.com"
-# end
-#
-# def something
-# group = "http://www.linkedin.com/groups?mostPopular=&gid=81780&trk=myg_ugrp_ovr"
-# creepy = Creepy.new
-# members = creepy.instance_eval do
-# login_to_linkedin && find_group_members(group)
-# end
-#
-#
-# file_name = SpreadsheetService.print :members => members
-# Mailer.delivery_method = :sendmail
-# Mailer.deliver_profile_email(file_name, from)
-# end
-# something
+ #~ def from
+ #~ "armohan@thoughtworks.com"
+ #~ end
+
+ #~ def something
+ #~ group = "http://www.linkedin.com/groups/Agile-Software-Community-India-37630?trk=myg_ugrp_ovr"
+ #~ creepy = Creepy.new
+ #~ members = creepy.instance_eval do
+ #~ login_to_linkedin && find_group_members(group)
+ #~ end
+
+
+ #~ file_name = SpreadsheetService.print :members => members
+ #~ Mailer.delivery_method = :sendmail
+ #~ Mailer.deliver_profile_email(file_name, from)
+ #~ end
+ #~ something

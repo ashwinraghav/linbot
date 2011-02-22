@@ -1,4 +1,7 @@
 This is a Chat Bot that chats as linkrawl at gmail.com.
+
 The bot can simply chat over jabber conventions and respond to simple queries. The crawler that runs behind it is capable to running through the members of a linked in group and identifying their profiles and locations.
+
+Rename the linkedin.rb.example to linkedin.rb and change the file to contain your own username and password. 
 
 Checkout github.com/vinkesh/masrvin to write your own bot.

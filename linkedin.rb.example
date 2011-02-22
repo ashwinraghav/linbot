@@ -3,8 +3,8 @@ class Linkedin
   SEARCH_URL = "#{BASE_URL}/search/fpsearch"
   COOKIE_FILE = "cookies.txt"
 
-  USERNAME = "csouza@thoughtworks.com"
-  PASSWORD = "clyde007"
+  USERNAME = "something@gmail.com"
+  PASSWORD = "password"
 
   def initialize
     @agent = Mechanize.new
@@ -24,10 +24,13 @@ class Linkedin
     @agent.get(url)
   end
 
-  def next_members_link_of group, page_num
-    sub = group.clone
-    sub["/groups?"] = "/groups?viewMembers="
+  def next_members_link_of members_page, page_num
+    sub = members_page.clone
     "#{sub}&split_page=#{page_num}"
+  end
+  
+  def click link
+    @agent.click link
   end
 
   private

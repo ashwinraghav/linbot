@@ -42,8 +42,11 @@ class Creepy
   end
 
   def profiles_of group
+    group_page = @linkedin.get(group)
+    members_page = @linkedin.click(group_page.link_with(:text => "Members"))
     (1..10).each do |page_num|
-      members_page = @linkedin.get(@linkedin.next_members_link_of(group, page_num))
+	    puts members_page.uri.to_s
+      members_page = @linkedin.get(@linkedin.next_members_link_of(members_page.uri.to_s, page_num))
       @members += members_page.members
       group += "&sik=" + CGI::parse(members_page.uri.to_s)["sik"].first if page_num == 1
     end
